@@ -1,0 +1,19 @@
+select count (distinct  A.clnum)
+from
+( 
+SELECT      max(peendt) as lastbill,   dbo.client.clnum, dbo.client.clname1, dbo.mattimhs.mtper, SUM(dbo.mattimhs.mthrwkdw) AS [Billable Hours]
+FROM            dbo.mattimhs INNER JOIN
+                         dbo.timekeep ON dbo.mattimhs.mttk = dbo.timekeep.tkinit INNER JOIN
+                         dbo.location ON dbo.timekeep.tkloc = dbo.location.locode INNER JOIN
+                         dbo.deptlab ON dbo.timekeep.tkdept = dbo.deptlab.delcode INNER JOIN
+                         dbo.periodt ON dbo.mattimhs.mtper = dbo.periodt.pe INNER JOIN
+                         dbo.matter ON dbo.mattimhs.mtmatter = dbo.matter.mmatter INNER JOIN
+                         dbo.client ON dbo.matter.mclient = dbo.client.clnum CROSS JOIN
+                         dbo.tsection
+WHERE        (timekeep.tksect = dbo.tsection.tsection) AND (dbo.periodt.peendt between dateadd(mm, -3, getdate() ) and getdate() )
+GROUP BY dbo.client.clnum, dbo.client.clname1, dbo.mattimhs.mtper
+HAVING        (sum(dbo.mattimhs.mthrwkdw) > 10)
+) as A
+--18383
+
+--3876--select dateadd(mm, -3, getdate() ) 

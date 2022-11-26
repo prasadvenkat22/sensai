@@ -1,0 +1,107 @@
+1) document exchnage for tax and audit
+like final reports back to client 
+what type of documents: 
+Reports then attach documents
+excel, csv, pdv.
+
+Not engagement terms
+
+when we file annually we create engagement for the year.
+client provides documents to person who is filing on behalf
+
+every year if process is going to occure this is called engagement - tax or audit
+individual or organization--these are called cleints
+
+all clients listed there 
+for each client we have an engagement 1: many engagement is nothing  but yearly return - 
+
+create new client (date for cleint is coming from netsuite)
+
+external and internal users(internal is EA personnel) - contact type is external or internal
+
+this is related to permissins upload, delete, previes
+if any events occur like uploading document or downloading then he should be notified - subscription 
+alerts and notificaiton.
+list of clients has list of engements
+
+ - search by name or client code
+--veiw engagements will navigate to the engagements
+--what is the matter for engagement --adit or tax?
+engagement folder name - or container 
+service type is audit or whatever
+chose template folder category or template exists
+year of filing, 
+for whatever temlate you select two folders will be created if you need to add folder if you create one more
+differnt users associated with client...but 3 engagements (audit, tax, law)
+You need to decide for what user (ealier it was client)
+you assign task to users
+you assign users to engagement--whoever is assinged to it
+Clone is is to use same template
+---external user will upload
+engagemens are created by internal users
+documents are uploaded by external guys
+now verify documents
+folder status
+when uploaded, status is open request or blank unless approved
+color changes as per verifictaion
+
+--------------
+now intrnal user will verify and create a reort and give it back to client (process is called breifcase)
+handed over to client back
+engagement briefcase--created internaly---breifcase has reports
+now this will be sent to external user
+he will verify the report
+----clients total no of folders and files is a vast
+----engagement brifcase has only ne optio download
+
+
+-----------------------------------------------------
+internal admin can see everything -client admin,
+if 3 persons are working for client -manger, prime contact, user....
+---------------upload and download is heavy usage
+
+you generate report
+----------------------------
+2 tables for user appliationuser(login info) and contact(firstname , last name etc)
+clinet table is basic details
+client contact ---
+client contact access
+one row for upload, update, etc....
+Client Briefcase and Engagemetn briedcase
+
+Client notificaton access
+accountid is combination client and user
+notificationactioninstanceacess
+
+
+Client, clientcontact(how client is associated with user)
+COntact table
+another table is engagement
+engagement table has templadeid
+
+engagement table, engagement folder, engagement folder access - it means particular user has access to folder or not
+User table is nothing but Applicationuser (combination of applicaiotn and contact)
+(user name is coming from application table)
+internal or external is in contact table (contact type)
+EndagementFolderinfo
+has physical name file size, etc
+Client  engagement engagemetn folder 
+
+
+ANother table is called briefcase and briefcase file
+Master table like matter number xcm number, etc is master data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
